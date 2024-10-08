@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Outfit", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    height: 100vh;
+    background-color: hsl(217, 54%, 11%);
+}
+
+.card {
+    width: 300px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(216, 50%, 16%);
+    border-radius: 15px;
+}
+
+.cardImageContainer {
+    position: relative; /* Required for absolute positioning of the overlay */
+    width: 250px; /* Match the width of the image */
+    height: 255px; /* Match the height of the image */
+}
+
+.cardImage {
+    width: 100%; /* Adjust to cover the container */
+    height: 100%; /* Adjust to cover the container */
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.view-icon {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to center */
+    width: 48px; 
+    height: 48px;
+    opacity: 0; /* Start with transparent */
+    transition: opacity 0.3s ease; 
+    z-index: 2; /* Ensure it's above the overlay */
+    filter: invert(0); /* Initial color for the icon */
+    cursor: pointer;
+}
+
+.cardImageContainer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: cyan; /* hover color */
+    opacity: 0; /* Start with transparent */
+    transition: opacity 0.3s ease; 
+    border-radius: 5px;
+    z-index: 1; /* Ensure it's above the image */
+}
+
+.cardImageContainer:hover::after {
+    opacity: 0.5; /* opacity on hover */
+    cursor: pointer;
+}
+
+.cardImageContainer:hover .view-icon {
+    opacity: 1; /* Show the icon on hover */
+    filter: invert(0); /* color to white on hover */
+}
+
+.cardContent {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    width: 250px;
+    color: hsl(0, 0%, 100%);
+}
+
+.cardTitle {
+    font-weight: 500;
+    margin: 20px 0;
+    margin-bottom: 10px;
+    color: hsla(0, 0%, 100%, 0.929);
+}
+
+.cardTitle:hover {
+    color: hsl(178, 100%, 50%);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.cardDescription {
+    font-size: 15px;
+    font-weight: 300;
+    color: hsl(217, 19%, 68%);
+}
+
+.cardFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+    margin: 0;
+    margin-top: -10px;
+    padding: 0;
+    font-size: 13px;
+}
+
+.cardPrice {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 500;
+    color: hsl(178, 100%, 50%);
+}
+
+.cardTimeLeft {
+    display: flex;
+    align-items: flex-end;
+    font-weight: 400;
+    color: hsl(217, 19%, 68%);
+}
+
+.eth-icon {
+    width: 18px;
+    height: 17px; 
+    margin-left: -5px;
+}
+
+.clockIcon {
+    font-weight: 500;
+    width: 15px;
+    height: 14px;
+    margin-right: 5px;
+}
+
+.line {
+    width: 250px;
+    height: 0.5px;
+    background-color: hsla(210, 20%, 92%, 0.141);
+    margin: 10px 0;
+}
+
+.cardCreatorContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+    color: hsl(217, 19%, 68%);
+}
+
+.cardCreatorAvatar {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 1px solid hsl(0, 0%, 100%);
+}
+
+.creatorFullName:hover {
+    color: hsl(178, 100%, 50%);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    color: hsl(0, 0%, 100%);
+    margin-top: 20px;
+}
