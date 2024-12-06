@@ -169,10 +169,3 @@ body {
     cursor: pointer;
     transition: color 0.3s ease;
 }
-
-.attribution {
-    font-size: 11px;
-    text-align: center;
-    color: hsl(0, 0%, 100%);
-    margin-top: 20px;
-}
